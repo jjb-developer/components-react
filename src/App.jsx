@@ -1,15 +1,21 @@
-import reactLogo from './assets/react.svg'
+import { Navbar1, Navbar3 } from './components/Navegations.jsx'
+import { Boton1, Boton2 } from './components/Botones.jsx'
+import { Header1 } from './components/Headers.jsx'
 
 function App() {
+  const items = ['about','products','contact','more']
+  const tuplas = [['bxs-dashboard','dashboard'],['bxs-user-circle','user'],['bxs-message','message'],['bx-objects-vertical-bottom','analytics'],['bxs-cart','cart'],['bxs-cog','settings']]
 
   return (
-    <div className="flex flex-col gap-y-4 w-full h-screen items-center justify-center">
-      <div>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="w-24" alt="React logo" />
-        </a>
+    <div className="flex w-full h-screen">
+      <Navbar3 lista={tuplas} color='teal' hover='amber'/>
+      <div className='w-full'>
+        <Header1/>
+        <div className='p-5 flex justify-around'>
+          <Boton1 color='sky' title='login'/>
+          <Boton1 color='orange' title='register'/>
+        </div>
       </div>
-      <h1 className="text-4xl font-medium tracking-tighter text-zinc-700">Project React</h1>
     </div>
   )
 }
